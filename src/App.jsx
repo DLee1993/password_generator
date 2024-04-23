@@ -1,7 +1,7 @@
 import { generate } from "generate-password-browser";
 import bcrypt from "bcryptjs-react";
 import { useState } from "react";
-import {Button} from 'react-aria-components';
+import { toast } from "react-toastify";
 function App() {
     const [hash, setHash] = useState();
     const [error, setError] = useState("");
@@ -23,13 +23,31 @@ function App() {
         });
     };
 
+    const copyToClipBoard = () => {
+        navigator.clipboard.writeText(hash);
+
+        toast.success("copied");
+    };
+
     return (
         <main>
-            <h1>
-                Generate a <span>free</span> secure password
-            </h1>
+            <h1>Instantly generate a secure, random password with this online tool</h1>
 
-            <Button onPress={() => genPass()}>generate</Button>
+            <section id="generatedPassword">
+                <p
+                    id="passwordText"
+                    style={{
+                        padding: `${hash ? "20px 16px" : null}`,
+                        border: `${hash ? "1px solid silver" : null}`,
+                        borderRadius: `${hash ? "4px" : null}`,
+                    }}
+                    onClick={() => copyToClipBoard()}
+                >
+                    {hash ? hash : error ? error : null}
+                </p>
+            </section>
+
+            <button onClick={() => genPass()}>generate my password</button>
         </main>
     );
 }

@@ -12,24 +12,26 @@
 body {
     min-width: 320px;
     min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
+    height: 100vh;
 }
 
-h1 span {
-    color: aqua;
-    text-decoration: underline;
+h1 {
+    text-align: center;
+    max-width: 700px;
 }
 
-.react-aria-Button {
+button,
+section {
     color: white;
     background: black;
-    border: 1px solid silver;
     border-radius: 4px;
     appearance: none;
     vertical-align: middle;
@@ -37,7 +39,6 @@ h1 span {
     text-align: center;
     margin: 0;
     outline: none;
-    padding: 6px 10px;
     text-decoration: none;
 
     &[data-pressed] {
@@ -49,4 +50,21 @@ h1 span {
         outline: 2px solid aqua;
         outline-offset: -1px;
     }
+}
+
+section {
+    cursor: pointer;
+    min-height: 5rem;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+button {
+    padding: 10px 16px;
+    border: 1px solid silver;
 }
