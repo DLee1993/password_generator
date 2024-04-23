@@ -1,0 +1,27 @@
+:root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 span {
+    color: aqua;
+    text-decoration: underline;
+}
