@@ -2,6 +2,7 @@ import { generate } from "generate-password-browser";
 import bcrypt from "bcryptjs-react";
 import { useState } from "react";
 import { toast } from "react-toastify";
+
 function App() {
     const [hash, setHash] = useState();
     const [error, setError] = useState("");
